@@ -1,4 +1,4 @@
-# Coursera R Programming Course 
+# Coursera - R Programming Course
 ### Assignment 2
 Posted by: Petar Luketic
 
