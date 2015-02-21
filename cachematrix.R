@@ -1,15 +1,20 @@
 ## makeCacheMatrix creates a special matrix object, and then cacheSolve calculates the inverse of the matrix.
-## If the matrix inverse has already been calculated, it will instead find it in the cache and return it, and not calculate it again.
+## If the matrix inverse has already been calculated, it will instfind it in the cache and return it, and not calculate it again.
 
 ## makeCacheMatrix function defines methods for inversing & caching inverse of the input matrix
+## it returns: a list with functions to access the cache
+##          - get: gets the cached matrix
+##          - set: sets a new matrix to be cached
+##          - getinverse: gets the cached inverse of the matrix
+##          - setinverse: sets the inverse of the matrix to be cached
 
 makeCacheMatrix <- function(x = matrix()) {
     inverse_x <- NULL                                   # sets the value of local vector inverse_x to NULL (placeholder for inverse matrix)
     set<-function(y){                                   # define set() function which 
-        x <<- y                                         # caches input matrix
+        x <<- y                                         # caches input (new) matrix
         inverse_x <<- NULL                              # sets the value of cached vector inverse_x to NULL
     }
-    get<-function() x                                   # define get() function which returns input matrix
+    get<-function() x                                   # define get() function which returns cached matrix
     setinverse<-function(solve) inverse_x <<- solve     # define setmatrix() function which caches variable m and assigns to it inverse of the input matrix
     getinverse<-function() inverse_x                    # define getmatrix() function which returns cached variable inverse_x (inverse of the input matrix)
     list(set=set, get=get,                              # define the list of external functions and their local definition names
