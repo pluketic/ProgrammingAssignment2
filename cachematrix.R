@@ -2,11 +2,11 @@
 ## If the matrix inverse has already been calculated, it will find it in the cache and return it, and will not calculate it again.
 
 ## makeCacheMatrix function defines methods for inversing & caching inverse of the input matrix
-## it returns: a list with functions to access the cache
+## it returns: a list of functions to access the cache:
 ##          - get: gets the cached matrix
 ##          - set: sets a new matrix to be cached
 ##          - getinverse: gets the cached inverse of the matrix
-##          - setinverse: sets the inverse of the matrix to be cached
+##          - setinverse: sets an inverse of the matrix to be cached
 
 makeCacheMatrix <- function(x = matrix()) {
     inverse_x <- NULL                                   # sets the value of local object inverse_x to NULL (placeholder for inverse matrix)
@@ -26,8 +26,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cacheSolve function returns inverse matrix first by checking whther an
 ## inverse matrix already exists in cache, if not then it calculates & caches it.
 
-cacheSolve <- function(x, ...) {
-    ## Return a matrix that is the inverse of 'x'
+cacheSolve <- function(x, ...) {                        
+    # Return a matrix that is the inverse of 'x'
     inverse_x <- x$getinverse()                         # defines local object inverse_x and assigns it a cached object (inverse of the input matrix)
     if(!is.null(inverse_x)){                            # if there is an cached inverse matrix inverse_x available in the cache
         print("getting cached inverse matrix")          # notify me about existing cached object
