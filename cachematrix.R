@@ -23,7 +23,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve function returns inverse matrix first by checking whther an
+## cacheSolve function returns inverse matrix first by checking wheather an
 ## inverse matrix already exists in cache, if not then it calculates & caches it.
 
 cacheSolve <- function(x, ...) {                        
